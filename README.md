@@ -8,12 +8,15 @@ Create a new folder and navigate to it
 `mkdir FOLDER_NAME`
 <br />
 `cd FOLDER_NAME`
+<br />
 Clone this repository to your machine
 <br />
 `git clone https://github.com/michalakadam/debian_essentials.git`
+<br />
 Make script executable by running 
 <br />
 `chmod u+x debian_essentials.sh`
+<br />
 Run script by typing 
 <br />
 `./debian_essentials.sh`
