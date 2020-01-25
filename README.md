@@ -3,21 +3,20 @@
 
 ### Instructions
 
-1. Create a new folder and navigate to it 
-```mkdir FOLDER_NAME
-cd FOLDER_NAME
-```
-
-2. Clone this repository to your machine
-
-
-3. Make script executable by running 
-```chmod u+x debian_essentials.sh
-```
-
-4. Run script by typing 
-```./debian_essentials.sh
-```
+Create a new folder and navigate to it 
+<br />
+`mkdir FOLDER_NAME`
+<br />
+`cd FOLDER_NAME`
+Clone this repository to your machine
+<br />
+`git clone https://github.com/michalakadam/debian_essentials.git`
+Make script executable by running 
+<br />
+`chmod u+x debian_essentials.sh`
+Run script by typing 
+<br />
+`./debian_essentials.sh`
 
 ### List of programs installed
 
@@ -44,5 +43,7 @@ cd FOLDER_NAME
 * manipulate .zshrc for best zsh experience
 
 **Do you have any problems with running this program?**
+<br />
 **Do you see any way this project can be improved?**
+<br />
  Please write an email to *adam.michalak.dev@gmail.com*
