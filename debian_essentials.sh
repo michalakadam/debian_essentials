@@ -19,7 +19,9 @@ is_action_successful(){
 }
 
 sudo apt install -y vim
-is_action_successful VIM $?
+export VISUAL=vim
+export EDITOR="$VISUAL"
+is_action_successful VIM $? "INSTALLED AND SET AS DEFAULT EDITOR"
 
 sudo apt install terminator
 is_action_successful TERMINATOR $?
