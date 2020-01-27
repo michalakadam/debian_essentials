@@ -26,7 +26,6 @@ is_action_successful VIM $? "INSTALLED AND SET AS DEFAULT EDITOR"
 sudo apt install terminator
 is_action_successful TERMINATOR $?
 sudo update-alternatives --config x-terminal-emulator
-is_action_successful TERMINATOR $? "SET AS DEFAULT TERMINAL"
 
 sudo apt install -y git
 is_action_successful GIT $?
@@ -64,9 +63,15 @@ if [[ $install_zsh == "Y" ]] ; then
 	is_action_successful ZSH $?
 	chsh -s $(which zsh)
 	is_action_successful ZSH $? "SET AS DEFAULT SHELL"
+
 	wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 	source ~/.zshrc
+
+	read -p "Please specify zsh theme you want to use? [gnzh] " zsh_theme
+	zsh_theme=${zsh_theme:-gnzh}
+	sed -i "s/robbyrussell/$zsh_theme/g" $HOME/.zshrc
+	is_action_successful $zsh_theme $? "SET AS ZSH THEME"
 fi
 
 

@@ -40,9 +40,11 @@ Run script by typing
 ### What else does this script does?
 
 * updates *apt* package manager
+* sets VIM as a default editor
 * enables user to set *terminator* as a default terminal
-* set *zsh* as default shell (of course!)
+* sets *zsh* as default shell (of course!)
 * adds useful alises to bash and zsh
+* sets [zsh theme](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) selected by the user
 
 **Do you have any problems with running this program?**
 <br />
