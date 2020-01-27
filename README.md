@@ -42,10 +42,7 @@ Run script by typing
 * updates *apt* package manager
 * enables user to set *terminator* as a default terminal
 * set *zsh* as default shell (of course!)
-
-### What does this script does not do?
-
-* manipulate .zshrc for best zsh experience
+* adds useful alises to bash and zsh
 
 **Do you have any problems with running this program?**
 <br />

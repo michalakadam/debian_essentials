@@ -10,11 +10,10 @@ is_action_successful(){
 	program_name=$1
 	exit_code=$2
 	action=${3:-INSTALLED}
-	echo -e "\n"
 	if [[ $exit_code -eq 0 ]] ; then
 		printf '\e[32m%-6s\e[m' "$program_name $action"
 	else
-		printf -e '\e[31m%-6s\e[m' "$program_name NOT $action"
+		printf '\e[31m%-6s\e[m' "$program_name NOT $action"
 	fi
 	echo -e "\n"
 }
@@ -66,6 +65,31 @@ if [[ $install_zsh == "Y" ]] ; then
 	wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 	source ~/.zshrc
+fi
+
+
+#Create file with useful aliases and add it to shell
+cat > $HOME/.aliases <<EOF
+
+alias c='clear'
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias rmf='rm -rf'
+alias grep='grep --color=auto'
+alias log='git log --oneline --decorate --graph'
+alias commit='git add . && git commit'
+alias amend='git commit --amend'
+
+EOF
+
+if [ -f $HOME/.bashrc ]; then
+	sed -i 's/.bash_aliases/.aliases/g' $HOME/.bashrc
+	is_action_successful "Aliases" $? "added to bash config file"
+fi
+
+if [ -f $HOME/.zshrc ]; then
+	echo 'source $HOME/.aliases' >> $HOME/.zshrc
+	is_action_successful "Aliases" $? "added to zsh config file"
 fi
 
 printf '\e[32m%-6s\e[m' "SCRIPT EXECUTED SUCCESSFULLY, PLEASE RESTART TERMINAL TO APPLY CHANGES"
