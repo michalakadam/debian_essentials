@@ -25,6 +25,8 @@ Run script by typing
 
 * dpkg
 * snap
+* curl
+* tree
 * vim
 * terminator
 * git
