@@ -27,6 +27,7 @@ Run script by typing
 * snap
 * curl
 * tree
+* dconf
 * vim
 * terminator
 * git
@@ -43,7 +44,7 @@ Run script by typing
 * updates *apt* package manager
 * sets custom keybindings for shutdown and reboot
 * lets user set a default editor
-* enables user to set *terminator* as a default terminal
+* enables user set default terminal
 * sets *zsh* as default shell (of course!)
 * adds useful alises to bash and zsh
 * sets [zsh theme](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) selected by the user
