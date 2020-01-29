@@ -22,12 +22,12 @@ is_action_successful(){
 #Add custom keybindings for shutdown and reboot
 sudo apt install dconf-editor
 
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'sudo shutdown -h now'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'shutdown -h now'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Alt>k'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'shutdown'"
 is_action_successful "CUSTOM KEYBINDING FOR SHUTDOWN" $? "SET TO <Primary>+<Alt>+k"
 
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'sudo reboot'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'reboot'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "'<Primary><Alt>r'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'reboot'"
 is_action_successful "CUSTOM KEYBINDING FOR REBOOT" $? "SET TO <Primary>+<Alt>+r"
