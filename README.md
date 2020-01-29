@@ -3,29 +3,27 @@
 
 ### Instructions
 
-Create a new folder and navigate to it 
+Install *curl*
 <br />
-`mkdir FOLDER_NAME`
-<br />
-`cd FOLDER_NAME`
+`sudo apt install curl`
 <br /><br />
-Clone this repository to your machine
+Copy this script to a file
 <br />
-`git clone https://github.com/michalakadam/debian_essentials.git`
+`curl https://raw.githubusercontent.com/michalakadam/debian_essentials/master/debian_essentials.sh -o ~/debian_essentials.sh
+`
 <br /><br />
 Make script executable by running 
 <br />
-`chmod u+x debian_essentials.sh`
+`chmod u+x ~/debian_essentials.sh`
 <br /><br />
 Run script by typing 
 <br />
-`./debian_essentials.sh`
+`~/debian_essentials.sh`
 
 ### List of programs installed
 
 * dpkg
 * snap
-* curl
 * tree
 * dconf
 * vim

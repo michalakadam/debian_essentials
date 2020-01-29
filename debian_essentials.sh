@@ -3,7 +3,6 @@
 sudo apt update -y
 sudo apt install dpkg -y
 sudo apt install snap -y
-sudo apt install curl -y
 sudo apt install tree -y
 
 is_action_successful(){
