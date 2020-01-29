@@ -40,7 +40,7 @@ Run script by typing
 ### What else does this script does?
 
 * updates *apt* package manager
-* sets VIM as a default editor
+* lets user set a default editor
 * enables user to set *terminator* as a default terminal
 * sets *zsh* as default shell (of course!)
 * adds useful alises to bash and zsh
