@@ -41,6 +41,15 @@ if [[ $install_chrome == "Y" ]] ; then
 	rm google-chrome-stable_current_amd64.deb
 fi
 
+read -p "Do you want to install Spotify? [Y/n] " install_spotify
+install_spotify=${install_spotify:-Y}
+if [[ $install_spotify == "Y" ]] ; then
+	snap install spotify
+        is_action_successful SPOTIFY $?
+fi
+
+
+
 read -p "Do you want to install Visual Studio Code? [Y/n] " install_code
 install_code=${install_code:-Y}
 if [[ $install_code == "Y" ]] ; then
@@ -76,6 +85,8 @@ fi
 
 #Create file with useful aliases and add it to shell
 cat > $HOME/.aliases <<EOF
+# You can add your aliases here.
+# Make sure to reset shell after editing this file for an alias to work!
 
 alias c='clear'
 alias ls='ls --color=auto'

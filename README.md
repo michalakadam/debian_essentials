@@ -33,6 +33,7 @@ Run script by typing
 * wget
 ##### Optionally
 * chrome
+* spotify
 * visual studio code
 * libre office
 * zsh + oh_my_zsh
