@@ -41,6 +41,7 @@ Run script by typing
 ### What else does this script does?
 
 * updates *apt* package manager
+* sets custom keybindings for shutdown and reboot
 * lets user set a default editor
 * enables user to set *terminator* as a default terminal
 * sets *zsh* as default shell (of course!)
