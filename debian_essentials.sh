@@ -17,7 +17,6 @@ is_action_successful(){
 	echo -e "\n"
 }
 
-
 #Add custom keybindings for shutdown and reboot
 sudo apt install dconf-editor
 
@@ -59,8 +58,11 @@ install_spotify=${install_spotify:-Y}
 if [[ $install_spotify == "Y" ]] ; then
 	snap install spotify
         is_action_successful SPOTIFY $?
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command "'spotify'"
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding "'<Primary><Alt>s'"
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name "'open spotify'"
+	is_action_successful "CUSTOM KEYBINDING FOR RUNNING SPOTIFY" $? "SET TO <Primary>+<Alt>+s"
 fi
-
 
 
 read -p "Do you want to install Visual Studio Code? [Y/n] " install_code
@@ -80,7 +82,6 @@ fi
 #Add installed programs to favourites' bar. Note that if a program was not installed and is present on the list below, it will just not appear among the favourites.
 dconf write /org/gnome/shell/favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'code_code.desktop', 'spotify_spotify.desktop', 'terminator.desktop']"
 
-
 read -p "Do you want to install zsh and set it as default shell? [Y/n]" install_zsh
 install_zsh=${install_zsh:-Y}
 if [[ $install_zsh == "Y" ]] ; then
@@ -98,7 +99,6 @@ if [[ $install_zsh == "Y" ]] ; then
 	sed -i "s/robbyrussell/$zsh_theme/g" $HOME/.zshrc
 	is_action_successful $zsh_theme $? "SET AS ZSH THEME"
 fi
-
 
 #Create file with useful aliases and add it to shell
 cat > $HOME/.aliases <<EOF
@@ -128,7 +128,4 @@ fi
 
 printf '\e[32m%-6s\e[m' "SCRIPT EXECUTED SUCCESSFULLY, PLEASE RESTART TERMINAL TO APPLY CHANGES"
 echo -e "\n"
-
-
-
 
