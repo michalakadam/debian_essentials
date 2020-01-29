@@ -43,6 +43,7 @@ Run script by typing
 * sets custom keybindings for shutdown and reboot
 * lets user set a default editor
 * enables user set default terminal
+* customizes gnome favourites' bar with installed programs
 * sets *zsh* as default shell (of course!)
 * adds useful alises to bash and zsh
 * sets [zsh theme](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) selected by the user

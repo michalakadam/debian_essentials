@@ -77,6 +77,10 @@ if [[ $install_office == "Y" ]] ; then
         is_action_successful "LIBRE OFFICE $?"
 fi
 
+#Add installed programs to favourites' bar. Note that if a program was not installed and is present on the list below, it will just not appear among the favourites.
+dconf write /org/gnome/shell/favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-writer.desktop', 'code_code.desktop', 'spotify_spotify.desktop', 'terminator.desktop']"
+
+
 read -p "Do you want to install zsh and set it as default shell? [Y/n]" install_zsh
 install_zsh=${install_zsh:-Y}
 if [[ $install_zsh == "Y" ]] ; then
