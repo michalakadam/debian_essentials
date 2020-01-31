@@ -25,11 +25,6 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'shutdown'"
 is_action_successful "CUSTOM KEYBINDING FOR SHUTDOWN" $? "SET TO <Primary>+<Alt>+k"
 
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'reboot'"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "'<Primary><Alt>r'"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'reboot'"
-is_action_successful "CUSTOM KEYBINDING FOR REBOOT" $? "SET TO <Primary>+<Alt>+r"
-
 sudo apt install -y vim
 is_action_successful VIM $?
 sudo update-alternatives --config editor
@@ -58,10 +53,6 @@ install_spotify=${install_spotify:-Y}
 if [[ $install_spotify == "Y" ]] ; then
 	snap install spotify
         is_action_successful SPOTIFY $?
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command "'spotify'"
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding "'<Primary><Alt>s'"
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name "'open spotify'"
-	is_action_successful "CUSTOM KEYBINDING FOR RUNNING SPOTIFY" $? "SET TO <Primary>+<Alt>+s"
 fi
 
 

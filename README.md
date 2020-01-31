@@ -40,7 +40,7 @@ Run script by typing
 ### What else does this script does?
 
 * updates *apt* package manager
-* sets custom keybindings for shutdown and reboot
+* sets custom keybindings for shutdown
 * lets user set a default editor
 * enables user set default terminal
 * customizes gnome favourites' bar with installed programs
